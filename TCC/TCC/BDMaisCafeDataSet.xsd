@@ -1,0 +1,65 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="BDMaisCafeDataSet" targetNamespace="http://tempuri.org/BDMaisCafeDataSet.xsd" xmlns:mstns="http://tempuri.org/BDMaisCafeDataSet.xsd" xmlns="http://tempuri.org/BDMaisCafeDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="BDMaisCafeConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BDMaisCafeConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TCC.My.MySettings.GlobalReference.Default.BDMaisCafeConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RelVendasTableAdapter" GeneratorDataComponentClassName="RelVendasTableAdapter" Name="RelVendas" UserDataComponentName="RelVendasTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BDMaisCafeConnectionString (MySettings)" DbObjectName="BDMaisCafe.dbo.RelVendas" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Cod_Venda, Cod_Item, Cod_Produto, Nome_Produto, Quantidade, Valor FROM dbo.RelVendas</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Cod_Venda" DataSetColumn="Cod_Venda" />
+              <Mapping SourceColumn="Cod_Item" DataSetColumn="Cod_Item" />
+              <Mapping SourceColumn="Cod_Produto" DataSetColumn="Cod_Produto" />
+              <Mapping SourceColumn="Nome_Produto" DataSetColumn="Nome_Produto" />
+              <Mapping SourceColumn="Quantidade" DataSetColumn="Quantidade" />
+              <Mapping SourceColumn="Valor" DataSetColumn="Valor" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="BDMaisCafeDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="BDMaisCafeDataSet" msprop:Generator_UserDSName="BDMaisCafeDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="RelVendas" msprop:Generator_TableClassName="RelVendasDataTable" msprop:Generator_TableVarName="tableRelVendas" msprop:Generator_TablePropName="RelVendas" msprop:Generator_RowDeletingName="RelVendasRowDeleting" msprop:Generator_RowChangingName="RelVendasRowChanging" msprop:Generator_RowEvHandlerName="RelVendasRowChangeEventHandler" msprop:Generator_RowDeletedName="RelVendasRowDeleted" msprop:Generator_UserTableName="RelVendas" msprop:Generator_RowChangedName="RelVendasRowChanged" msprop:Generator_RowEvArgName="RelVendasRowChangeEvent" msprop:Generator_RowClassName="RelVendasRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Cod_Venda" msprop:Generator_ColumnVarNameInTable="columnCod_Venda" msprop:Generator_ColumnPropNameInRow="Cod_Venda" msprop:Generator_ColumnPropNameInTable="Cod_VendaColumn" msprop:Generator_UserColumnName="Cod_Venda" type="xs:int" />
+              <xs:element name="Cod_Item" msprop:Generator_ColumnVarNameInTable="columnCod_Item" msprop:Generator_ColumnPropNameInRow="Cod_Item" msprop:Generator_ColumnPropNameInTable="Cod_ItemColumn" msprop:Generator_UserColumnName="Cod_Item" type="xs:int" />
+              <xs:element name="Cod_Produto" msprop:Generator_ColumnVarNameInTable="columnCod_Produto" msprop:Generator_ColumnPropNameInRow="Cod_Produto" msprop:Generator_ColumnPropNameInTable="Cod_ProdutoColumn" msprop:Generator_UserColumnName="Cod_Produto" type="xs:int" />
+              <xs:element name="Nome_Produto" msprop:Generator_ColumnVarNameInTable="columnNome_Produto" msprop:Generator_ColumnPropNameInRow="Nome_Produto" msprop:Generator_ColumnPropNameInTable="Nome_ProdutoColumn" msprop:Generator_UserColumnName="Nome_Produto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Quantidade" msprop:Generator_ColumnVarNameInTable="columnQuantidade" msprop:Generator_ColumnPropNameInRow="Quantidade" msprop:Generator_ColumnPropNameInTable="QuantidadeColumn" msprop:Generator_UserColumnName="Quantidade" type="xs:int" />
+              <xs:element name="Valor" msprop:Generator_ColumnVarNameInTable="columnValor" msprop:Generator_ColumnPropNameInRow="Valor" msprop:Generator_ColumnPropNameInTable="ValorColumn" msprop:Generator_UserColumnName="Valor" type="xs:decimal" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:RelVendas" />
+      <xs:field xpath="mstns:Cod_Venda" />
+      <xs:field xpath="mstns:Cod_Item" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

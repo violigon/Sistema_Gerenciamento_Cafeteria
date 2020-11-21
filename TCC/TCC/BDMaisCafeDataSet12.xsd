@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="BDMaisCafeDataSet12" targetNamespace="http://tempuri.org/BDMaisCafeDataSet12.xsd" xmlns:mstns="http://tempuri.org/BDMaisCafeDataSet12.xsd" xmlns="http://tempuri.org/BDMaisCafeDataSet12.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="BDMaisCafeConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BDMaisCafeConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TCC.My.MySettings.GlobalReference.Default.BDMaisCafeConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TBEstruturaTableAdapter" GeneratorDataComponentClassName="TBEstruturaTableAdapter" Name="TBEstrutura" UserDataComponentName="TBEstruturaTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BDMaisCafeConnectionString (MySettings)" DbObjectName="BDMaisCafe.dbo.TBEstrutura" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Cod_ProdIN, Quantidade FROM dbo.TBEstrutura</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Cod_ProdIN" DataSetColumn="Cod_ProdIN" />
+              <Mapping SourceColumn="Quantidade" DataSetColumn="Quantidade" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TBProdutosTableAdapter" GeneratorDataComponentClassName="TBProdutosTableAdapter" Name="TBProdutos" UserDataComponentName="TBProdutosTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BDMaisCafeConnectionString (MySettings)" DbObjectName="BDMaisCafe.dbo.TBProdutos" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Nome_Produto FROM dbo.TBProdutos</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Nome_Produto" DataSetColumn="Nome_Produto" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="BDMaisCafeDataSet12" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="BDMaisCafeDataSet12" msprop:Generator_UserDSName="BDMaisCafeDataSet12">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="TBEstrutura" msprop:Generator_TableClassName="TBEstruturaDataTable" msprop:Generator_TableVarName="tableTBEstrutura" msprop:Generator_TablePropName="TBEstrutura" msprop:Generator_RowDeletingName="TBEstruturaRowDeleting" msprop:Generator_RowChangingName="TBEstruturaRowChanging" msprop:Generator_RowEvHandlerName="TBEstruturaRowChangeEventHandler" msprop:Generator_RowDeletedName="TBEstruturaRowDeleted" msprop:Generator_UserTableName="TBEstrutura" msprop:Generator_RowChangedName="TBEstruturaRowChanged" msprop:Generator_RowEvArgName="TBEstruturaRowChangeEvent" msprop:Generator_RowClassName="TBEstruturaRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Cod_ProdIN" msprop:Generator_ColumnVarNameInTable="columnCod_ProdIN" msprop:Generator_ColumnPropNameInRow="Cod_ProdIN" msprop:Generator_ColumnPropNameInTable="Cod_ProdINColumn" msprop:Generator_UserColumnName="Cod_ProdIN" type="xs:int" />
+              <xs:element name="Quantidade" msprop:Generator_ColumnVarNameInTable="columnQuantidade" msprop:Generator_ColumnPropNameInRow="Quantidade" msprop:Generator_ColumnPropNameInTable="QuantidadeColumn" msprop:Generator_UserColumnName="Quantidade" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="TBProdutos" msprop:Generator_TableClassName="TBProdutosDataTable" msprop:Generator_TableVarName="tableTBProdutos" msprop:Generator_TablePropName="TBProdutos" msprop:Generator_RowDeletingName="TBProdutosRowDeleting" msprop:Generator_RowChangingName="TBProdutosRowChanging" msprop:Generator_RowEvHandlerName="TBProdutosRowChangeEventHandler" msprop:Generator_RowDeletedName="TBProdutosRowDeleted" msprop:Generator_UserTableName="TBProdutos" msprop:Generator_RowChangedName="TBProdutosRowChanged" msprop:Generator_RowEvArgName="TBProdutosRowChangeEvent" msprop:Generator_RowClassName="TBProdutosRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Nome_Produto" msprop:Generator_ColumnVarNameInTable="columnNome_Produto" msprop:Generator_ColumnPropNameInRow="Nome_Produto" msprop:Generator_ColumnPropNameInTable="Nome_ProdutoColumn" msprop:Generator_UserColumnName="Nome_Produto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

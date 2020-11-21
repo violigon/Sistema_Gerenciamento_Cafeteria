@@ -1,0 +1,994 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1C05A00E-B2B5-4E53-8187-15FC852D5432}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>TCC.My.MyApplication</StartupObject>
+    <RootNamespace>TCC</RootNamespace>
+    <AssemblyName>TCC</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>TCC.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>TCC.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>logoico.ico</ApplicationIcon>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BackupRestore.vb" />
+    <Compile Include="BDMaisCafeDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BDMaisCafeDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\FrmCadCompras.Designer.vb">
+      <DependentUpon>FrmCadCompras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\FrmCadCompras.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\FrmCadContas.Designer.vb">
+      <DependentUpon>FrmCadContas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\FrmCadContas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\FrmCadUsuario.Designer.vb">
+      <DependentUpon>FrmCadUsuario.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\FrmCadUsuario.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="conexaobd.vb" />
+    <Compile Include="Cadastros\FrmCadEstrutura.Designer.vb">
+      <DependentUpon>FrmCadEstrutura.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\FrmCadEstrutura.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\FrmCadCli.Designer.vb">
+      <DependentUpon>FrmCadCli.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\FrmCadCli.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\FrmCadFornec.Designer.vb">
+      <DependentUpon>FrmCadFornec.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\FrmCadFornec.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\FrmCadFunc.Designer.vb">
+      <DependentUpon>FrmCadFunc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\FrmCadFunc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\FrmCadProd.Designer.vb">
+      <DependentUpon>FrmCadProd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\FrmCadProd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Cadastros\DataSets\DataSetCompras.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetCompras.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\DataSets\DataSetEst.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetEst.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Cadastros\DataSets\DataSetUser.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetUser.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetCliente.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetCliente.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetFornec.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetFornec.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetFunc.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetFunc.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetFuncUser.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetFuncUser.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetItensVendas.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetItensVendas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetProd.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetProd.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetProduto.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetProduto.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetRel.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetRel.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetRelProd.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetRelProd.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetRelVendas.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetRelVendas.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetUsuario.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetUsuario.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetViewProdCompras.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetViewProdCompras.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetViewRelCompras.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetViewRelCompras.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Outros\FrmBackupRestore.Designer.vb">
+      <DependentUpon>FrmBackupRestore.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Outros\FrmBackupRestore.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outros\FrmCaixa.Designer.vb">
+      <DependentUpon>FrmCaixa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Outros\FrmCaixa.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outros\FrmMensagem.Designer.vb">
+      <DependentUpon>FrmMensagem.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Outros\FrmMensagem.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outros\FrmPesqMensagemWEBSITE.Designer.vb">
+      <DependentUpon>FrmPesqMensagemWEBSITE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Outros\FrmPesqMensagemWEBSITE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outros\FrmFinalizarVenda.Designer.vb">
+      <DependentUpon>FrmFinalizarVenda.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Outros\FrmFinalizarVenda.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outros\FrmPagarConta.Designer.vb">
+      <DependentUpon>FrmPagarConta.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Outros\FrmPagarConta.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outros\FrmRelatorios.Designer.vb">
+      <DependentUpon>FrmRelatorios.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Outros\FrmRelatorios.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outros\FrmVendas.Designer.vb">
+      <DependentUpon>FrmVendas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Outros\FrmVendas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outros\Login.Designer.vb">
+      <DependentUpon>Login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Outros\Login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pesquisas\FrmPesqCliVendas.Designer.vb">
+      <DependentUpon>FrmPesqCliVendas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pesquisas\FrmPesqCliVendas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pesquisas\FrmPesqCompras.Designer.vb">
+      <DependentUpon>FrmPesqCompras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pesquisas\FrmPesqCompras.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pesquisas\FrmPesqContas.Designer.vb">
+      <DependentUpon>FrmPesqContas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pesquisas\FrmPesqContas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pesquisas\FrmPesqEst.Designer.vb">
+      <DependentUpon>FrmPesqEst.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pesquisas\FrmPesqEst.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pesquisas\FrmPesqForCompras.Designer.vb">
+      <DependentUpon>FrmPesqForCompras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pesquisas\FrmPesqForCompras.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pesquisas\FrmPesqFornec.Designer.vb">
+      <DependentUpon>FrmPesqFornec.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pesquisas\FrmPesqFornec.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pesquisas\FrmPesqFunc.Designer.vb">
+      <DependentUpon>FrmPesqFunc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pesquisas\FrmPesqFunc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pesquisas\FrmPesqProCompras.Designer.vb">
+      <DependentUpon>FrmPesqProCompras.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pesquisas\FrmPesqProCompras.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pesquisas\FrmPesqProd.Designer.vb">
+      <DependentUpon>FrmPesqProd.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pesquisas\FrmPesqProd.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pesquisas\FrmPesqProdIN.Designer.vb">
+      <DependentUpon>FrmPesqProdIN.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pesquisas\FrmPesqProdIN.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pesquisas\FrmPesqProdPA.Designer.vb">
+      <DependentUpon>FrmPesqProdPA.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pesquisas\FrmPesqProdPA.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pesquisas\FrmPesqProdVendas.Designer.vb">
+      <DependentUpon>FrmPesqProdVendas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pesquisas\FrmPesqProdVendas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pesquisas\FrmPesquisaCli.Designer.vb">
+      <DependentUpon>FrmPesquisaCli.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pesquisas\FrmPesquisaCli.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outros\FrmPrinc.Designer.vb">
+      <DependentUpon>FrmPrinc.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Outros\FrmPrinc.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pesquisas\FrmPesqUser.Designer.vb">
+      <DependentUpon>FrmPesqUser.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pesquisas\FrmPesqUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Pesquisas\FrmPesqVendas.Designer.vb">
+      <DependentUpon>FrmPesqVendas.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Pesquisas\FrmPesqVendas.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outros\SplashScreen.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Outros\SplashScreen.Designer.vb">
+      <DependentUpon>SplashScreen.vb</DependentUpon>
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="TBfaleconoscoMaiscaféDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>TBfaleconoscoMaiscaféDataSet.xsd</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Cadastros\FrmCadCli.resx">
+      <DependentUpon>FrmCadCli.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\FrmCadCompras.resx">
+      <DependentUpon>FrmCadCompras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\FrmCadContas.resx">
+      <DependentUpon>FrmCadContas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\FrmCadEstrutura.resx">
+      <DependentUpon>FrmCadEstrutura.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\FrmCadFornec.resx">
+      <DependentUpon>FrmCadFornec.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\FrmCadFunc.resx">
+      <DependentUpon>FrmCadFunc.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\FrmCadProd.resx">
+      <DependentUpon>FrmCadProd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Cadastros\FrmCadUsuario.resx">
+      <DependentUpon>FrmCadUsuario.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outros\FrmBackupRestore.resx">
+      <DependentUpon>FrmBackupRestore.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outros\FrmCaixa.resx">
+      <DependentUpon>FrmCaixa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outros\FrmMensagem.resx">
+      <DependentUpon>FrmMensagem.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outros\FrmPesqMensagemWEBSITE.resx">
+      <DependentUpon>FrmPesqMensagemWEBSITE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outros\FrmFinalizarVenda.resx">
+      <DependentUpon>FrmFinalizarVenda.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outros\FrmPagarConta.resx">
+      <DependentUpon>FrmPagarConta.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outros\FrmRelatorios.resx">
+      <DependentUpon>FrmRelatorios.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outros\FrmVendas.resx">
+      <DependentUpon>FrmVendas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outros\Login.resx">
+      <DependentUpon>Login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Relatórios\ReportVenda.rdlc" />
+    <EmbeddedResource Include="Relatórios\ReportCompras.rdlc" />
+    <EmbeddedResource Include="Relatórios\ReportProd.rdlc" />
+    <EmbeddedResource Include="Pesquisas\FrmPesqCliVendas.resx">
+      <DependentUpon>FrmPesqCliVendas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pesquisas\FrmPesqCompras.resx">
+      <DependentUpon>FrmPesqCompras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pesquisas\FrmPesqContas.resx">
+      <DependentUpon>FrmPesqContas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pesquisas\FrmPesqEst.resx">
+      <DependentUpon>FrmPesqEst.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pesquisas\FrmPesqForCompras.resx">
+      <DependentUpon>FrmPesqForCompras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pesquisas\FrmPesqFornec.resx">
+      <DependentUpon>FrmPesqFornec.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pesquisas\FrmPesqFunc.resx">
+      <DependentUpon>FrmPesqFunc.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pesquisas\FrmPesqProCompras.resx">
+      <DependentUpon>FrmPesqProCompras.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pesquisas\FrmPesqProd.resx">
+      <DependentUpon>FrmPesqProd.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pesquisas\FrmPesqProdIN.resx">
+      <DependentUpon>FrmPesqProdIN.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pesquisas\FrmPesqProdPA.resx">
+      <DependentUpon>FrmPesqProdPA.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pesquisas\FrmPesqProdVendas.resx">
+      <DependentUpon>FrmPesqProdVendas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pesquisas\FrmPesquisaCli.resx">
+      <DependentUpon>FrmPesquisaCli.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outros\FrmPrinc.resx">
+      <DependentUpon>FrmPrinc.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pesquisas\FrmPesqUser.resx">
+      <DependentUpon>FrmPesqUser.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Pesquisas\FrmPesqVendas.resx">
+      <DependentUpon>FrmPesqVendas.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Outros\SplashScreen.resx">
+      <DependentUpon>SplashScreen.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="BDMaisCafeDataSet.xsc">
+      <DependentUpon>BDMaisCafeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="BDMaisCafeDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BDMaisCafeDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BDMaisCafeDataSet.xss">
+      <DependentUpon>BDMaisCafeDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Cadastros\DataSets\DataSetCompras.xsc">
+      <DependentUpon>DataSetCompras.xsd</DependentUpon>
+    </None>
+    <None Include="Cadastros\DataSets\DataSetCompras.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetCompras.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Cadastros\DataSets\DataSetCompras.xss">
+      <DependentUpon>DataSetCompras.xsd</DependentUpon>
+    </None>
+    <None Include="Cadastros\DataSets\DataSetEst.xsc">
+      <DependentUpon>DataSetEst.xsd</DependentUpon>
+    </None>
+    <None Include="Cadastros\DataSets\DataSetEst.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetEst.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Cadastros\DataSets\DataSetEst.xss">
+      <DependentUpon>DataSetEst.xsd</DependentUpon>
+    </None>
+    <None Include="Cadastros\DataSets\DataSetUser.xsc">
+      <DependentUpon>DataSetUser.xsd</DependentUpon>
+    </None>
+    <None Include="Cadastros\DataSets\DataSetUser.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetUser.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Cadastros\DataSets\DataSetUser.xss">
+      <DependentUpon>DataSetUser.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetCliente.xsc">
+      <DependentUpon>DataSetCliente.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetCliente.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetCliente.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetCliente.xss">
+      <DependentUpon>DataSetCliente.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetFornec.xsc">
+      <DependentUpon>DataSetFornec.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetFornec.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetFornec.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetFornec.xss">
+      <DependentUpon>DataSetFornec.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetFunc.xsc">
+      <DependentUpon>DataSetFunc.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetFunc.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetFunc.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetFunc.xss">
+      <DependentUpon>DataSetFunc.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetFuncUser.xsc">
+      <DependentUpon>DataSetFuncUser.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetFuncUser.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetFuncUser.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetFuncUser.xss">
+      <DependentUpon>DataSetFuncUser.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetItensVendas.xsc">
+      <DependentUpon>DataSetItensVendas.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetItensVendas.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetItensVendas.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetItensVendas.xss">
+      <DependentUpon>DataSetItensVendas.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetProd.xsc">
+      <DependentUpon>DataSetProd.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetProd.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetProd.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetProd.xss">
+      <DependentUpon>DataSetProd.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetProduto.xsc">
+      <DependentUpon>DataSetProduto.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetProduto.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetProduto.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetProduto.xss">
+      <DependentUpon>DataSetProduto.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetRel.xsc">
+      <DependentUpon>DataSetRel.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetRel.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetRel.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetRel.xss">
+      <DependentUpon>DataSetRel.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetRelProd.xsc">
+      <DependentUpon>DataSetRelProd.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetRelProd.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetRelProd.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetRelProd.xss">
+      <DependentUpon>DataSetRelProd.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetRelVendas.xsc">
+      <DependentUpon>DataSetRelVendas.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetRelVendas.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetRelVendas.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetRelVendas.xss">
+      <DependentUpon>DataSetRelVendas.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetUsuario.xsc">
+      <DependentUpon>DataSetUsuario.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetUsuario.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetUsuario.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetUsuario.xss">
+      <DependentUpon>DataSetUsuario.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetViewProdCompras.xsc">
+      <DependentUpon>DataSetViewProdCompras.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetViewProdCompras.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetViewProdCompras.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetViewProdCompras.xss">
+      <DependentUpon>DataSetViewProdCompras.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetViewRelCompras.xsc">
+      <DependentUpon>DataSetViewRelCompras.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetViewRelCompras.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetViewRelCompras.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="DataSetViewRelCompras.xss">
+      <DependentUpon>DataSetViewRelCompras.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\DataSources\TCC.BDMaisCafeDataSet5TableAdapters.BuscarUsuarioTableAdapter.datasource" />
+    <None Include="My Project\DataSources\TCC.BDMaisCafeDataSet5TableAdapters.TableAdapterManager+UpdateOrderOption.datasource" />
+    <None Include="My Project\DataSources\TCC.BDMaisCafeDataSet5TableAdapters.TableAdapterManager.datasource" />
+    <None Include="My Project\DataSources\TCC.BDMaisCafeDataSet5TableAdapters.TB_LoginTableAdapter.datasource" />
+    <None Include="My Project\DataSources\TCC.BDMaisCafeDataSetTableAdapters.TableAdapterManager+UpdateOrderOption.datasource" />
+    <None Include="My Project\DataSources\TCC.BDMaisCafeDataSetTableAdapters.TableAdapterManager.datasource" />
+    <None Include="My Project\DataSources\TCC.BDMaisCafeDataSetTableAdapters.TBClientesTableAdapter.datasource" />
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="App.config" />
+    <None Include="TBfaleconoscoMaiscaféDataSet.xsc">
+      <DependentUpon>TBfaleconoscoMaiscaféDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="TBfaleconoscoMaiscaféDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>TBfaleconoscoMaiscaféDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="TBfaleconoscoMaiscaféDataSet.xss">
+      <DependentUpon>TBfaleconoscoMaiscaféDataSet.xsd</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo 4.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login terminado.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tela princ.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cadcli.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_cadastro.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icon_cadastro1.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pesquisa.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-icon.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit-icon2.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Delete.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tela princ1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\splash.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\splash1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\back icon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pesquisamenor.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\telafundo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SplashScreen.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SplashScreenpng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SplashScreen3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\CadUser.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icone1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Aha-Soft-People-Check-user.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icone11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clientes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\truck-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\funcionario.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office-Customer-Male-Light-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cadProduto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\AdmInvertido.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Mananger invertido.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Manager-Suit-Black-Tie-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\clientescombrilho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\funcionariocombrilho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Office-Customer-Male-Light-iconcombrilho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\truck-iconcombrilho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cadProdutocombrilho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logout com brilho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logout.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wheel_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wheel_iconCOMBRILHO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lock_icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Lock_iconcombrilho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cash_resgister.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cash_resgistercombrilho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\btncombrilho.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\telafundo1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\fundo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Ok3D.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cup-coffee-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icone_relatorios.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\icone_contas.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\price_list_money-256.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Login terminado1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar_icon1-300x275.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\calendar_icon1-300x2751.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\full-basket-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\full-basket-icon1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pay-1kwuuqc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\US-dollar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\TelaVendasMax.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\LOGO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo PEQUENO.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Logo certo.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cup-coffee-icon com brilho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\price_list_money com brilho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo escuro.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo escuro1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\full-basket-icon com brilhop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Blue-Backup-W-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Blue-Backup-W-icon com brilho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\budget_invetigation-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\qdc-exec-jobs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\search cash.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search1.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Search1 com brilho.fw.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\qdc-exec-jobs com brilho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\backup.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\restore.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\return.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ss.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new-message-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\new-message-icon com brilho.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\go-back-icon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="logoico.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

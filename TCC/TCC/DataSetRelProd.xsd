@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetRelProd" targetNamespace="http://tempuri.org/DataSetRelProd.xsd" xmlns:mstns="http://tempuri.org/DataSetRelProd.xsd" xmlns="http://tempuri.org/DataSetRelProd.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="BDMaisCafeConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="BDMaisCafeConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.TCC.My.MySettings.GlobalReference.Default.BDMaisCafeConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="RelProdTableAdapter" GeneratorDataComponentClassName="RelProdTableAdapter" Name="RelProd" UserDataComponentName="RelProdTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="BDMaisCafeConnectionString (MySettings)" DbObjectName="BDMaisCafe.dbo.RelProd" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Cod_Produto, Nome_Produto, Tipo_Produto, Unidade, status, Custo, preço_venda, Quantidade FROM dbo.RelProd</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Cod_Produto" DataSetColumn="Cod_Produto" />
+              <Mapping SourceColumn="Nome_Produto" DataSetColumn="Nome_Produto" />
+              <Mapping SourceColumn="Tipo_Produto" DataSetColumn="Tipo_Produto" />
+              <Mapping SourceColumn="Unidade" DataSetColumn="Unidade" />
+              <Mapping SourceColumn="status" DataSetColumn="status" />
+              <Mapping SourceColumn="Custo" DataSetColumn="Custo" />
+              <Mapping SourceColumn="preço_venda" DataSetColumn="preço_venda" />
+              <Mapping SourceColumn="Quantidade" DataSetColumn="Quantidade" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetRelProd" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DataSetRelProd" msprop:Generator_UserDSName="DataSetRelProd">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="RelProd" msprop:Generator_TableClassName="RelProdDataTable" msprop:Generator_TableVarName="tableRelProd" msprop:Generator_TablePropName="RelProd" msprop:Generator_RowDeletingName="RelProdRowDeleting" msprop:Generator_RowChangingName="RelProdRowChanging" msprop:Generator_RowEvHandlerName="RelProdRowChangeEventHandler" msprop:Generator_RowDeletedName="RelProdRowDeleted" msprop:Generator_UserTableName="RelProd" msprop:Generator_RowChangedName="RelProdRowChanged" msprop:Generator_RowEvArgName="RelProdRowChangeEvent" msprop:Generator_RowClassName="RelProdRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Cod_Produto" msprop:Generator_ColumnVarNameInTable="columnCod_Produto" msprop:Generator_ColumnPropNameInRow="Cod_Produto" msprop:Generator_ColumnPropNameInTable="Cod_ProdutoColumn" msprop:Generator_UserColumnName="Cod_Produto" type="xs:int" />
+              <xs:element name="Nome_Produto" msprop:Generator_ColumnVarNameInTable="columnNome_Produto" msprop:Generator_ColumnPropNameInRow="Nome_Produto" msprop:Generator_ColumnPropNameInTable="Nome_ProdutoColumn" msprop:Generator_UserColumnName="Nome_Produto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="40" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Tipo_Produto" msprop:Generator_ColumnVarNameInTable="columnTipo_Produto" msprop:Generator_ColumnPropNameInRow="Tipo_Produto" msprop:Generator_ColumnPropNameInTable="Tipo_ProdutoColumn" msprop:Generator_UserColumnName="Tipo_Produto">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="2" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Unidade" msprop:Generator_ColumnVarNameInTable="columnUnidade" msprop:Generator_ColumnPropNameInRow="Unidade" msprop:Generator_ColumnPropNameInTable="UnidadeColumn" msprop:Generator_UserColumnName="Unidade">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="status" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_UserColumnName="status" type="xs:boolean" minOccurs="0" />
+              <xs:element name="Custo" msprop:Generator_ColumnVarNameInTable="columnCusto" msprop:Generator_ColumnPropNameInRow="Custo" msprop:Generator_ColumnPropNameInTable="CustoColumn" msprop:Generator_UserColumnName="Custo" type="xs:decimal" minOccurs="0" />
+              <xs:element name="preço_venda" msprop:Generator_ColumnVarNameInTable="columnpreço_venda" msprop:Generator_ColumnPropNameInRow="preço_venda" msprop:Generator_ColumnPropNameInTable="preço_vendaColumn" msprop:Generator_UserColumnName="preço_venda" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Quantidade" msprop:Generator_ColumnVarNameInTable="columnQuantidade" msprop:Generator_ColumnPropNameInRow="Quantidade" msprop:Generator_ColumnPropNameInTable="QuantidadeColumn" msprop:Generator_UserColumnName="Quantidade" type="xs:decimal" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:RelProd" />
+      <xs:field xpath="mstns:Cod_Produto" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>
